@@ -7,7 +7,7 @@ const Schema = require('../models/Schema');
 exports.getSearchData = async (req,res,next) => {
     try{
         const searchStr = req.query.q;
-        const searchData = await Schema.find({Name: {$regex: searchStr, $options: 'i'}});
+        const searchData = await Schema.find({Name: {$regex: searchStr, $options: 'i'}}).select('Name website');
         return res.status(200).json({
             success: true,
             count: searchData.length,

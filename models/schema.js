@@ -3,12 +3,9 @@ const mongoose = require('mongoose');
 const searchSchema = new mongoose.Schema({
     Name : {
         type: String,
-        trim: true,
-        required: true
     },
-    website :{
+    website: {
         type: String,
-        trim: true,
     },
     Location: {
         type: String,
@@ -27,4 +24,4 @@ const searchSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('search', searchSchema);
+module.exports = mongoose.model('Companies', searchSchema);

@@ -8,15 +8,11 @@ dotenv.config({path: './config/config.env'});
 connectDB();
 const search = require('./routes/search');
 const app = express();
+if(process.env.NODE_ENV  === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use('/search', search);
-// app.use(express.json());
-
-// if(process.env.NODE_ENV === 'development') {
-//   app.use(morgan('dev'));
-// }
-
-// if(process.env.NODE_ENV === 'production') {
-//   app.use(express.static('client/build'));
 
 const PORT = process.env.PORT || 5000;
 

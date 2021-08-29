@@ -7,7 +7,8 @@
     "start": "node index",
     "server": "nodemon index",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run client\" \"npm run server\""
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "heroku-postbuild": "cd client/src && npm install && npm run build"
   },
   "author": "anish",
   "license": "ISC",

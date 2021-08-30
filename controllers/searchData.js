@@ -1,4 +1,4 @@
-const Schema = require('../models/Schema');
+const Schema = require('../models/schema');
 
 // description - get all the companies data related to queried company literals
 // route - GET /search 
